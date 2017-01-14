@@ -10,6 +10,8 @@ services:
     build: .
     expose:
       - "9092"
+    depends_on:
+      - "zookeeper"
     environment:
       HOSTNAME_COMMAND: ip a show dev eth0 scope global | grep -oE "\d+.\d+.\d+.\d+"
       # KAFKA_ADVERTISED_HOST_NAME: kafka
