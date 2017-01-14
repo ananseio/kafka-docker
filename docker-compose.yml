@@ -11,8 +11,8 @@ services:
     expose:
       - "9092"
     environment:
-      # KAFKA_ADVERTISED_HOST_NAME: 192.168.1.85
-      HOSTNAME_COMMAND: ip a show dev eth0 scope global | grep -oE "\d+.\d+.\d+.\d+"
+      # HOSTNAME_COMMAND: ip a show dev eth0 scope global | grep -oE "\d+.\d+.\d+.\d+"
+      KAFKA_ADVERTISED_HOST_NAME: kafka.local-dev.ananse.io
       KAFKA_ADVERTISED_PORT: 9092
       KAFKA_CREATE_TOPICS: "workloads:4:1,sequences:4:1,scenes:4:1,results:4:1,notifications:4:1,logs:4:1,sensors:4:1,events:4:1,heartbeats:4:1,ping:4:1,pong:4:1,register:4:1,reload:4:1"
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
